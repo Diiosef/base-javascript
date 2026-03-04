@@ -6,13 +6,18 @@
     <title>Dia-1-Variables</title>
 </head>
 <body>
-    <h1>Nome</h1>
-    <h1>Idade</h1>
-    <h1>Altura</h1>
-    <h1>Peso</h1>
+    <h1>Exercicios dia 1</h1>
+
+    <script src="script.js"></script>
+</body></html>
+<body>
+    <button onclick="Nome()">Nome</button>
+    <button onclick="Idade()">Idade</button>
+    <button onclick="Altura()">Altura</button>
+    <button onclick="Peso()">Peso</button>
+
     <H4>criando uma calculadora simples</H4>
 
-<div>
     <h2>Calculadora</h2>
     <input type="number" id="num1" placeholder="Número 1">
     <input type="number" id="num2" placeholder="Número 2">
@@ -23,38 +28,4 @@
     <button onclick="dividir()">Dividir </button>
 
     <h3 id="resultado"></h3>
-</div>
-
-<script>
- function pegarValores() {
-        const num1 = parseFloat(document.getElementById('num1').value);
-        const num2 = parseFloat(document.getElementById('num2').value);
-        return { num1, num2 };
-    }   
-
-    function mostraraResultado(valor) {
-        document.getElementById("resultado").innerText = "Resultado: " + valor;
-    }
-    function somar() {
-        let { num1, num2 } = pegarValores();
-        mostraraResultado(num1 + num2);
-    }
-    function subtrair() {
-        let { num1, num2 } = pegarValores();
-        mostraraResultado(num1 - num2);
-    }
-    function multiplicar() {
-        let { num1, num2 } = pegarValores();
-        mostraraResultado(num1 * num2);
-    }
-    function dividir() {
-        let { num1, num2 } = pegarValores();
-        if (num2 !== 0) {
-            mostraraResultado(num1 / num2);
-        } else {
-            mostraraResultado("Erro: Divisão por zero")
-        }
-    }
-</script>
 </body>
-</html>
