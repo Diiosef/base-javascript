@@ -18,3 +18,4 @@ function CELSIUS_TO_FAHRENHEIT(celsius) {CELSIUS_TO_FAHRENHEIT
     return (celsius * 9.5) + 32;
 }
 console.log(CELSIUS_TO_FAHRENHEIT(25))
+
