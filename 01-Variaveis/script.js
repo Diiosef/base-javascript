@@ -28,3 +28,17 @@ function calcularIMC() {
     document.getElementById('resultado').textContent =
     'Seu IMC é: ' + imc.toFixed(2);
 }
+function calcularPerimetro() {
+    var largura = parseFloat(document.getElementById('Largura1').value);
+    var altura = parseFloat(document.getElementById('Altura1').value);
+
+    if (isNaN(largura) || isNaN(altura) || largura <= 0 || altura <= 0) {
+        document.getElementById('resultadoPerimetro').textContent =
+        'Por favor, insira valores válidos para largura e altura.';
+        return;
+    }
+
+    var perimetro = 2 * (largura + altura);
+    document.getElementById('resultadoPerimetro').textContent =
+    'O perímetro é: ' + perimetro.toFixed(2);
+}
