@@ -42,3 +42,14 @@ function calcularPerimetro() {
     document.getElementById('resultadoPerimetro').textContent =
     'O perímetro é: ' + perimetro.toFixed(2);
 }
+function converterHoras() {
+    var horas = parseInt(document.getElementById('horas').value);
+    if (isNaN(horas)) {
+        document.getElementById('resultadoHoras').textContent =
+        'Por favor, insira um valor válido para horas.';
+        return;
+    }
+    var minutos = horas * 60;
+    document.getElementById('resultadoHoras').textContent =
+    horas + ' horas equivalem a ' + minutos + ' minutos.';
+}
