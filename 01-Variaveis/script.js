@@ -1,43 +1,31 @@
+function mostrarNome() {
+    alert("Meu nome é Danilo");
+}
 
-        function Nome() {
-            alert("Meu nome é Danilo");
-        }
-        function Idade() {
-            alert("Minha idade é 27 anos");
-        }
-        function Altura() {
-            alert("Minha altura é 1,75 metros");
-        }
-        function Peso() {
-            alert("Meu peso é 70 quilos");
-        }
+function mostrarAltura() {
+    alert("Minha altura é 1,75 metros");
+}
 
- function pegarValores() {
-        const num1 = parseFloat(document.getElementById('num1').value);
-        const num2 = parseFloat(document.getElementById('num2').value);
-        return { num1, num2 };
-    }   
+function calcularIMC() {
 
-    function mostraraResultado(valor) {
-        document.getElementById("resultado").innerText = "Resultado: " + valor;
-    }
-    function somar() {
-        let { num1, num2 } = pegarValores();
-        mostraraResultado(num1 + num2);
-    }
-    function subtrair() {
-        let { num1, num2 } = pegarValores();
-        mostraraResultado(num1 - num2);
-    }
-    function multiplicar() {
-        let { num1, num2 } = pegarValores();
-        mostraraResultado(num1 * num2);
-    }
-    function dividir() {
-        let { num1, num2 } = pegarValores();
-        if (num2 !== 0) {
-            mostraraResultado(num1 / num2);
-        } else {
-            mostraraResultado("Erro: Divisão por zero")
+    const peso = parseFloat(document.getElementById('peso').value);
+    const altura = parseFloat(document.getElementById('altura').value);
+
+    const imc = peso / (altura * altura);
+
+    document.getElementById('resultado').innerText =
+        "Seu IMC é: " + imc.toFixed(2);
+
+        if (imc < 18.5) {
+            alert("Você está abaixo do peso.");
         }
-    }
+        else if (imc <25) {
+            alert("Você está com peso normal.");
+        }
+        else if (imc <30) {
+            alert("Você está com sobrepeso.");
+        }
+        else {
+            alert("Você está com obesidade.");
+        }
+}
