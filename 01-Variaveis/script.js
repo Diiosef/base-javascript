@@ -1,43 +1,55 @@
+function exibirNome() {
+    alert("Seu nome");
+}
 
-        function Nome() {
-            alert("Meu nome é Danilo");
-        }
-        function Idade() {
-            alert("Minha idade é 27 anos");
-        }
-        function Altura() {
-            alert("Minha altura é 1,75 metros");
-        }
-        function Peso() {
-            alert("Meu peso é 70 quilos");
-        }
+function exibirProfissao() {
+    alert("Sua profissão");
+}
 
- function pegarValores() {
-        const num1 = parseFloat(document.getElementById('num1').value);
-        const num2 = parseFloat(document.getElementById('num2').value);
-        return { num1, num2 };
-    }   
+function exibirAnosEstudo() {
+    alert("Tenho X anos de estudo");
+}
 
-    function mostraraResultado(valor) {
-        document.getElementById("resultado").innerText = "Resultado: " + valor;
+function apresentar() {
+    alert("Olá, meu nome é Danilo, estudo programação há X anos e gosto de JS");
+}
+
+function calcularIMC() {
+    var peso = parseFloat(document.getElementById('number1').value);
+    var altura = parseFloat(document.getElementById('number2').value);
+
+    if (isNaN(peso) || isNaN(altura) || altura <= 0) {
+        document.getElementById('resultado').textContent =
+        'Por favor, insira valores válidos para peso e altura.';
+        return;
     }
-    function somar() {
-        let { num1, num2 } = pegarValores();
-        mostraraResultado(num1 + num2);
+
+    var imc = peso / (altura * altura);
+    document.getElementById('resultado').textContent =
+    'Seu IMC é: ' + imc.toFixed(2);
+}
+function calcularPerimetro() {
+    var largura = parseFloat(document.getElementById('Largura1').value);
+    var altura = parseFloat(document.getElementById('Altura1').value);
+
+    if (isNaN(largura) || isNaN(altura) || largura <= 0 || altura <= 0) {
+        document.getElementById('resultadoPerimetro').textContent =
+        'Por favor, insira valores válidos para largura e altura.';
+        return;
     }
-    function subtrair() {
-        let { num1, num2 } = pegarValores();
-        mostraraResultado(num1 - num2);
+
+    var perimetro = 2 * (largura + altura);
+    document.getElementById('resultadoPerimetro').textContent =
+    'O perímetro é: ' + perimetro.toFixed(2);
+}
+function converterHoras() {
+    var horas = parseInt(document.getElementById('horas').value);
+    if (isNaN(horas)) {
+        document.getElementById('resultadoHoras').textContent =
+        'Por favor, insira um valor válido para horas.';
+        return;
     }
-    function multiplicar() {
-        let { num1, num2 } = pegarValores();
-        mostraraResultado(num1 * num2);
-    }
-    function dividir() {
-        let { num1, num2 } = pegarValores();
-        if (num2 !== 0) {
-            mostraraResultado(num1 / num2);
-        } else {
-            mostraraResultado("Erro: Divisão por zero")
-        }
-    }
+    var minutos = horas * 60;
+    document.getElementById('resultadoHoras').textContent =
+    horas + ' horas equivalem a ' + minutos + ' minutos.';
+}
